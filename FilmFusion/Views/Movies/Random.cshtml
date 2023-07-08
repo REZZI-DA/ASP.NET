@@ -1,0 +1,48 @@
+﻿
+@model
+.ViewModels.RandomMovieViewModel
+
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var className = Model.Customers?.Count > 5 ? "popular" : null;
+}
+
+
+
+
+
+<ul>
+    s
+    @foreach (var c in @Model.Customers)
+    {
+        <li> @c.Name</li>
+    }
+
+</ul>
+
+
+
+@if (Model.Customers != null)
+{
+
+    if (Model.Customers?.Count == 0)
+    {
+        <text>Niemand hat diesen Film bisher ausgeliehen</text>
+    }
+    else
+    {
+        <ul>
+
+            @foreach (var c in Model.Customers)
+            {
+                <li> @c.Name</li>
+            }
+
+        </ul>
+    }
+
+}
